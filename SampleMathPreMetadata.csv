@@ -1,0 +1,18 @@
+Variable Name,Scale,Data Type,Definition,Values,Source,Notes,Original Qualtrics Labels
+PRE_BEGIN_DATE_TIME,,Date Time,Date and time survey was started,,,,StartDate
+PRE_END_DATE_TIME,,Date Time,Date and time survey was completed,,,,EndDate
+PRE_OFFICIAL_SRVY,,Numeric,Survey version chosen for analysis,"1-yes, 0-no",,Multiple students took the pre survey more than once.  The first earlier version of the survey was chosen because the later versions were likely after the start of the program.  If the earlier survey is mostly incomplete then later survey is the official survey.,
+PRE_TERM,,String,Term Survey was completed,Summer 2025,,,
+PRE_STUDENT_ID,,Numeric,"Pick a name other than your own to act as your pseudonym (fake name). Please no recognizable book characters, movie characters, or other copy righted items.",,,,
+PRE_MAJOR_AREA_OF_INTRST,,String,What major or career area are you currently interested in pursuing?,,,,Q65
+PRE_POST_HS_GRAD,,String,At this time I see myself doing one of the following after high school graduation:,,,,Q79
+,,,At this moment:,,,,
+PRE_CA_01,Career Awareness,Numeric,I'm aware of what studying math may be like,"1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree","Career awareness scale adapted from Adedokun et al., 2014",,Awareness_1
+PRE_CA_02,Career Awareness,Numeric,I'm aware of  the various math oriented career opportunities available,"1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree","Career awareness scale adapted from Adedokun et al., 2014",,Awareness_2
+PRE_CA_03,Career Awareness,Numeric,I'm aware of of math  career options I could specialize in,"1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree","Career awareness scale adapted from Adedokun et al., 2014",,Awareness_3
+,,,How much confidence do you have in your ability to:,,,,
+PRE_SE_01,Self-Efficacy,Numeric,Complete the program activities for this summer program.,"1-not at all confident, 2-low confidence, 3-slightly confident,4-moderately confident, 5-very confident","Adapted Lent et al., 2013",,SE_1
+PRE_SE_02,Self-Efficacy,Numeric,Complete the first year of a math related major or job readiness program.,"1-not at all confident, 2-low confidence, 3-slightly confident,4-moderately confident, 5-very confident","Adapted Lent et al., 2013",,SE_2
+PRE_SE_03,Self-Efficacy,Numeric,Successfully complete all required courses in a math related major or job readiness program.,"1-not at all confident, 2-low confidence, 3-slightly confident,4-moderately confident, 5-very confident","Adapted Lent et al., 2013",,SE_3
+,,,,,,,
+,,,,,,,

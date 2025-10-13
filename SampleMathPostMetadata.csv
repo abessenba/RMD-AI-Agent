@@ -1,0 +1,28 @@
+Variable Name,Scale,Data Type,Definition,Values,Source,Notes,Original Qualtrics Labels
+POST_SRVY_BEGIN_DATE_TIME,,Date Time,Date and time survey started,,,,StartDate
+POST_SRVY_END_DATE_TIME,,Date Time,Date and time survey was completed,,,,EndDate
+POST_STUDENTID,,Numeric,"Pick a name other than your own to act as your pseudonym (fake name). Please no recognizable book characters, movie characters, or other copy righted items.",,,,Q89
+POST_TERM,,String,Term survey was completed,Summer 2025,,,
+POST_SRVY_MAJOR_AREA_OF_INTRST,,String,What major or career area are your currently interested in pursuing?,,,,Q70
+POST_SRVY_POST_HS_GRAD,,Numeric,At this time I see myself doing one of the following after high school graduation:,"0- I chose not to answer, 1- starting directly in the workforce, 2 - attending community college to complete a Certification or Associates Degree, 3 - Attending community college and transferring to a university, 4 - Attending a 4-year college or university",,,Q79
+,,,At this moment:,,,,
+POST_SRVY_CA_01,Career Awareness,Numeric,I'm aware of what studying math may be like.,"1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree","Career awareness scale adapted from Adedokun et al., 2014",,Q83_1
+POST_SRVY_CA_02,Career Awareness,Numeric,I'm aware of  the various math oriented career opportunities available,"1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree","Career awareness scale adapted from Adedokun et al., 2014",,Q83_2
+POST_SRVY_CA_03,Career Awareness,Numeric,I'm aware of of math  career options I could specialize in,"1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree","Career awareness scale adapted from Adedokun et al., 2014",,Q83_3
+,,,How much confidence do you have in your ability to:,,,,
+POST_SE_01,Self-Efficacy,Numeric,Complete the program activities for this summer program.,"1-not confident at all, 2-low confidence, 3-slightly confident,4-moderately confident, 5-very confident","Adapted Lent et al., 2013",,SE_1
+POST_SE_02,Self-Efficacy,Numeric,Complete the first year of a math related major or job readiness program.,"1-not at all confident, 2-low confidence, 3-slightly confident,4-moderately confident, 5-very confident","Adapted Lent et al., 2013",,SE_2
+POST_SE_03,Self-Efficacy,Numeric,Successfully complete all required courses in a math related major or job readiness program.,"1-not at all confident, 2-low confidence, 3-slightly confident,4-moderately confident, 5-very confident","Adapted Lent et al., 2013",,SE_3
+,,,Please provide feedback on your experiences with the PITCH Program as a whole: ,,,,
+POST_PRGM_FDBCK_02_01,Program Feedback,Numeric,This program has helped me consider whether the math field would be a good career fit for me.,"1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree",Team Developed,,Program Feedback-2_1
+POST_PRGM_FDBCK_02_02,Program Feedback,Numeric,I learned about specific challenges in the math field.,"1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree",Team Developed,,Program Feedback-2_2
+POST_PRGM_FDBCK_02_03,Program Feedback,Numeric,Participating in this program was a good use of my time.,"1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree",Team Developed,,Program Feedback-2_3
+POST_PRGM_FDBCK_02_04,Program Feedback,Numeric,"I felt supported by program faculty, staff, and other program participants?","1-strongly disagree, 2-disagree, 3-neither agree nor disagree, 4-agree, 5-strongly agree",Team Developed,,Program Feedback-2_4
+,,,,,,,
+POST_PRD_ACCMPLSHMNT,,string,What’s one thing you’re proud of accomplishing during this program?,,,,Q85
+POST_LIKE_MOST,,string,What did you like most about the program?,,,,Program Feedback-3
+POST_SGST_IMPRV,,string,What suggestions do you have for improving the program?,,,,Program Feedback-4
+POST_HEAR_PRGRM,,string,How did you hear about the PITCH Program?,,,,Q76
+POST_STPND_MTVTNG_FCTR,,numeric,Was the stipend a motivating factor in you participating in this summer program?,"0-no, 1-yes",,,Q77
+POST_RCMD_PRGM,,numeric,Would you recommend this program to your friends and other peers in your school and community?,"0-no, 1-yes",,,Q78
+POST_ADDTNL_CMNTS,,string,Are there any additional comments you would like to share about the program?,,,,Q80
