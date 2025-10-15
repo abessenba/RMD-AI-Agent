@@ -1,78 +1,5 @@
----
-title: "Title"
-output:
-  word_document:
-    reference_docx: word-styles-reference-01.docx
-    toc: no
-  pdf_document:
-    toc: no
-  html_document:
-    toc: no
----
-
-```{r setup, include=FALSE}
-## set standard code chunk options
-knitr::opts_chunk$set(echo=FALSE, warning=FALSE, error=FALSE, include=FALSE, message=FALSE, comment=NA)
-
-## load libraries
-library(dplyr)
-library(cowplot)
-library(flextable)
-library(forcats)
-library(ggplot2)
-library(ggpubr)
-library(ggtext)
-library(grid)
-library(gridExtra)
-library(HH)
-library(officer)
-library(officedown)
-library(psych)
-library(RColorBrewer)
-library(RCurl)
-library(reshape2)
-library(robustbase)
-library(SnowballC)
-library(stringi)
-library(stringr)
-library(textcat)
-library(tidyr)
-library(tm)
-library(viridis)
-library(wordcloud)
-library(XML)
-
-## turn off dpyr warning message for summarise with grouping
-options(dplyr.summarise.inform = FALSE)
-
-## Set color brewer palate to use in plots
-pvmpalette <- "PRGn"
-pvmboxplotpalette <- "Greens"
-pvmpalette2 <- "PuBuGn"
-upperselectorcolor <- "#7FBF7B"
-lowerselectorcolor <- "#AF8DC3"
-meanupperselector <- .5
-meanlowerselector <- -.5
-
-## Set significant digits
-sigdig <- 0
-sigdig1 <- 1
-sigdig2 <- 2
-sigdig3 <- 3
-sigdig4 <- 4
-
-## set subgrouplimit that determines minimum number of individuals required to display a subgroup
-subgrouplimit = 10
-
-fp <- fp_par(text.align = "center", padding.top = 120)
-ft <- fp_text(font.size = 14, bold = TRUE, color = "#000000")
-
-## Trim and decimal functions
-trim <- function (x) gsub("^\\s+|\\s+$", "", x)
-specify_decimal <- function(x, k) trimws(format(round(x, k), nsmall=k))
-```
-
-```{r load data files}
+#################
+## load data files
 ## set working directory
 setwd('//nas01.itap.purdue.edu//edu_create//ADMIN//ELRC//Data Team SHARED//Data Report Templates//SampleMath//')
 
@@ -83,12 +10,10 @@ SampleMathPOST <- read.csv('//nas01.itap.purdue.edu//edu_create//ADMIN//ELRC//Da
 
 SampleMathMergeDF <- merge(SampleMathPRE, SampleMathPOST, by.x="PRE_STUDENTID", by.y="POST_STUDENTID", all=TRUE)
 
-```
-
-```{r create numeric variables}
+########################
+## create numeric variables
 ## Create leadership numeric variables
-SampleMathMergeDF <- SampleMathMergeDF %>%
-  mutate(PRE_OFFICIAL_SRVY_n = as.numeric(PRE_OFFICIAL_SRVY))
+SampleMathMergeDF <- SampleMathMergeDF %>% mutate(PRE_OFFICIAL_SRVY_n = as.numeric(PRE_OFFICIAL_SRVY))
   
 SampleMathMergeDF <- SampleMathMergeDF %>% mutate( PRE_STUDENTID_n = as.numeric(PRE_STUDENTID))
 
@@ -119,9 +44,9 @@ SampleMathMergeDF <- SampleMathMergeDF %>% mutate(POST_PRGM_FDBCK_02_04_n = as.n
 
 SampleMathMergeDF <- SampleMathMergeDF %>% mutate(POST_STPND_MTVTNG_FCTR_n = as.numeric(POST_STPND_MTVTNG_FCTR))
 SampleMathMergeDF <- SampleMathMergeDF %>% mutate(POST_RCMD_PRGM_n = POST_RCMD_PRGM))
-```
 
-```{r create factor variables}
+##########################
+## create factor variables
 ## create factor variables and set levels
 SampleMathMergeDF$PRE_OFFICIAL_SRVY_f <- factor(SampleMathMergeDF$PRE_OFFICIAL_SRVY_n, levels = c(0,1), labels = c("no", "yes"))
   
@@ -150,9 +75,10 @@ SampleMathMergeDF$POST_PRGM_FDBCK_02_04_f <- factor(SampleMathMergeDF$POST_PRGM_
 
 SampleMathMergeDF$POST_STPND_MTVTNG_FCTR_f <- factor(SampleMathMergeDF$POST_STPND_MTVTNG_FCTR_n, levels = c(0,1), labels = c("no", "yes")) 
 SampleMathMergeDF$POST_RCMD_PRGM_f <- factor(SampleMathMergeDF$POST_RCMD_PRGM_n, levels = c(0,1), labels = c("no", "yes")) 
-```
 
-```{r create PRE_CA scales}
+
+##########################
+## create PRE_CA scales
 ## 1 create PRE_CA scale
 PRE_CA_Measure_LIST <- c('PRE_CA_01_n','PRE_CA_02_n','PRE_CA_03_n')
 
@@ -189,9 +115,9 @@ SampleMathMergeDF <- SampleMathMergeDF %>% mutate(PRE_CA_Measure_LKRT = case_whe
 	
 ## 7 check normality for the PRE_CA measure	
 PRE_CA_Measure_normality <- check_measure_normality(SampleMathMergeDF, PRE_CA_Measure_LIST)
-```
 
-```{r create PRE_SE scales}
+
+## create PRE_SE scales
 ## 1 create PRE_SE scale
 PRE_SE_Measure_LIST <- c('PRE_SE_01_n','PRE_SE_02_n','PRE_SE_03_n')
 
@@ -228,9 +154,10 @@ SampleMathMergeDF <- SampleMathMergeDF %>% mutate(PRE_SE_Measure_LKRT = case_whe
 	
 ## 7 check normality for the PRE_SE measure	
 PRE_SE_Measure_normality <- check_measure_normality(SampleMathMergeDF, PRE_SE_Measure_LIST)
-```
 
-```{r create POST_CA scales}
+
+#########################
+## create POST_CA scales
 ## 1 create POST_CA scale
 POST_CA_Measure_LIST <- c('POST_CA_01_n','POST_CA_02_n','POST_CA_03_n')
 
@@ -267,9 +194,10 @@ SampleMathMergeDF <- SampleMathMergeDF %>% mutate(POST_CA_Measure_LKRT = case_wh
 	
 ## 7 check normality for the POST_CA measure	
 POST_CA_Measure_normality <- check_measure_normality(SampleMathMergeDF, POST_CA_Measure_LIST)
-```
 
-```{r create POST_SE scales}
+
+########################
+## create POST_SE scales
 ## 1 create POST_SE scale
 POST_SE_Measure_LIST <- c('POST_SE_01_n','POST_SE_02_n','POST_SE_03_n')
 
@@ -306,9 +234,10 @@ SampleMathMergeDF <- SampleMathMergeDF %>% mutate(POST_SE_Measure_LKRT = case_wh
 	
 ## 7 check normality for the POST_SE measure	
 POST_SE_Measure_normality <- check_measure_normality(SampleMathMergeDF, POST_SE_Measure_LIST)
-```
 
-```{r create POST_PRGM_FDBCK scales}
+
+###########################
+## create POST_PRGM_FDBCK scales
 ## 1 create POST_PRGM_FDBCK scale
 POST_PRGM_FDBCK_Measure_LIST <- c('POST_PRGM_FDBCK_01_n','POST_PRGM_FDBCK_02_n','POST_PRGM_FDBCK_03_n', 'POST_PRGM_FDBCK_04_n')
 
@@ -321,7 +250,7 @@ POST_PRGM_FDBCK_Measuretf = False
 
 ## 7 check normality for the POST_PRGM_FDBCK measure	
 POST_PRGM_FDBCK_Measure_normality <- check_measure_normality(SampleMathMergeDF, POST_PRGM_FDBCK_Measure_LIST)
-```
+
 
 
 
@@ -357,6 +286,7 @@ summaryOfConstructs <- data.frame('Evaluation Question', 'Measure', 'Item Descri
 ### Demographics
 
 ### Evaluation Question 1
+
 
 
 
