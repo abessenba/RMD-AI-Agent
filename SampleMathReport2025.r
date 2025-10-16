@@ -272,20 +272,12 @@ POST_PRGM_FDBCK_Measure_normality <- check_measure_normality(SampleMathMergeDF, 
 
 ### Description of Instruments
 
-```{r Table Summary of constructs}
-
-## Create Table Summary of Constructs, define columns
-summaryOfConstructs <- data.frame('Evaluation Question', 'Measure', 'Item Description', 'Normality of Measure', 'Reliability of Measure', 'Source')
-
-
-
-```
-
 ## Evaluation Findings
 
 ### Demographics
 
 ### Evaluation Question 1
+
 
 
 
